@@ -41,19 +41,6 @@ public class PerspectiveFeature extends BaseToggleableFeature {
 
         var perspective = client.options.getPerspective();
 
-        while (THIRD_PERSON_PERSPECTIVE_KEY.wasPressed()) {
-            if (isEnabled()) {
-                inverted = !inverted;
-                return;
-            }
-
-            if (perspective != Perspective.THIRD_PERSON_BACK) {
-                client.options.setPerspective(Perspective.THIRD_PERSON_BACK);
-                return;
-            }
-
-            client.options.setPerspective(Perspective.FIRST_PERSON);
-        }
 
         if (!isEnabled()) {
             return;
